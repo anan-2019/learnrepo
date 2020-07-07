@@ -7,6 +7,6 @@
  */
 object Main {
     def main(args: Array[String]): Unit = {
-        print("测试")
+        print("测试flink")
     }
 }
