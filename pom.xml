@@ -11,6 +11,7 @@
     <modules>
         <module>sparklearn</module>
         <module>scalalearn</module>
+        <module>javalearn</module>
     </modules>
 
 
