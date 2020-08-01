@@ -15,6 +15,7 @@
         <module>kafkastarter</module>
         <module>dockerbuild</module>
         <module>redislearn</module>
+        <module>hdfslearn</module>
     </modules>
 
     <properties>
