@@ -13,6 +13,8 @@
         <module>scalalearn</module>
         <module>javalearn</module>
         <module>flinklearn</module>
+        <module>baselearn</module>
+        <module>javalearn/baselearn</module>
     </modules>
 
 
