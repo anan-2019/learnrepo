@@ -13,6 +13,6 @@ import java.lang.annotation.*;
 @Retention(value = RetentionPolicy.RUNTIME)
 @Documented
 public @interface SwatchSource {
-    String DEFALULT_NAME = "";
+    String DEFALULT_NAME = "datasource";
     String value() default DEFALULT_NAME;
 }

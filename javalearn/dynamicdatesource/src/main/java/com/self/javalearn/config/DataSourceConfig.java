@@ -31,7 +31,7 @@ public class DataSourceConfig {
      * @ConfigurationProperties：使得配置文件中以spring.datasource为前缀的属性映射到Bean的属性中
      */
     @ConfigurationProperties(prefix = "spring.datasource")
-    @Bean("dataSource")
+    @Bean(name = SwatchSource.DEFALULT_NAME)
     public DataSource dataSource(){
         return new DruidDataSource();
     }
@@ -40,7 +40,7 @@ public class DataSourceConfig {
      * 向IOC容器中注入另外一个数据源
      * 全局配置文件中前缀是spring.datasource.his
      */
-    @Bean(name = SwatchSource.DEFALULT_NAME)
+    @Bean("hissource")
     @ConfigurationProperties(prefix = "spring.datasource.his")
     public DataSource hisDataSource() {
         return DataSourceBuilder.create().build();
