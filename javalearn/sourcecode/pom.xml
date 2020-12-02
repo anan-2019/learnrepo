@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>javalearn</artifactId>
+        <groupId>com.self</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.self.javalearn</groupId>
+    <artifactId>sourcecode</artifactId>
+
+    <properties>
+        <maven.build.timestamp.format>yyyyMMdd</maven.build.timestamp.format>
+    </properties>
+
+    <scm>
+        <connection>scm:svn:https://svn.windinfo.net/svn/BigData/trunk/technology/跨组协作/数据接入程序/trunk/datatransfer</connection>
+        <tag>HEAD</tag>
+        <url>https://svn.windinfo.net/svn/BigData/trunk/technology/跨组协作/数据接入程序/trunk/datatransfer</url>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/application*.properties</exclude>
+                        <exclude>**/application-*.yml</exclude>
+                        <exclude>**/application.yml</exclude>
+                        <exclude>**/application*.yml</exclude>
+                        <exclude>**/logback*.xml</exclude>
+                        <exclude>**/hadoop-conf/core-site.xml</exclude>
+                        <exclude>**/hadoop-conf/hdfs-site.xml</exclude>
+                        <exclude>**/hadoop-conf/filterPid.sh</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <finalName>${project.artifactId}_v${project.version}_svn${buildNumber}_${maven.build.timestamp}</finalName>
+                </configuration>
+            </plugin>
+
+            <!--引用SVN版本号 -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <doCheck>false</doCheck>
+                    <doUpdate>true</doUpdate>
+                </configuration>
+            </plugin>
+            <!--  跳过测试-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>*</exclude>
+                </excludes>
+            </resource>
+        </resources>
+    </build>
+</project>

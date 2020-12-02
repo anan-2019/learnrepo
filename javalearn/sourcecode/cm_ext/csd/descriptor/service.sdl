@@ -1,0 +1,176 @@
+{
+    "name": "SOURCECODE",
+    "label": "sourcecode",
+    "description": "源代码测试[大数据平台]",
+    "version": "6.0.0",
+    "maxInstances": 1,
+    "runAs": {
+        "user": "root",
+        "group": "root"
+    },
+    "icon": "images/icon.png",
+    "serviceDependencies": [
+        {
+            "name": "PLATCONFIG",
+            "required": "true"
+        }
+    ],
+    "parcel": {
+        "requiredTags": [
+            "sourcecode"
+        ]
+    },
+    "inExpressWizard": true,
+    "rolesWithExternalLinks": [
+
+    ],
+    "parameters": [
+        {
+            "name": "ngsp-s-auth.app-code",
+            "label": "应用授权码",
+            "description": "应用授权码",
+            "required": "true",
+            "type": "string",
+            "default": "dataplat"
+        },
+        {
+            "name": "ngsp-s-auth.app-secret",
+            "label": "应用授权 秘钥",
+            "description": "应用授 秘钥",
+            "required": "true",
+            "type": "string",
+            "configurableInWizard": true,
+            "default": "6kM0gfBfOyKYfM+iyxA5+g=="
+        },
+        {
+            "name": "pjm.storeurl.prefix",
+            "label": "存储路径前缀",
+            "description": "存储路径前缀",
+            "required": "true",
+            "type": "string",
+            "default": "/gw_bigdata"
+        },
+        {
+            "name": "pjm.schedule-port",
+            "label": "调度器 web端口",
+            "description": "调度器 web端口",
+            "required": "true",
+            "type": "port",
+            "configurableInWizard": true,
+            "default": 9018
+        }
+    ],
+    "roles": [
+        {
+            "name": "SOURCECODEDESC",
+            "label": "sourcecodedesc",
+            "pluralLabel": "sourcecodedesc",
+            "startRunner": {
+                "program": "scripts/sourcecode.sh",
+                "args": [
+                    "start"
+                ]
+            },
+            "logging": {
+                "dir": "/var/log/sourcecode",
+                "filename": "sourcecode.log",
+                "modifiable": true,
+                "loggingType": "logback"
+            },
+            "parameters": [
+                {
+                    "name": "spring.application.version",
+                    "label": "版本",
+                    "description": "版本",
+                    "required": "true",
+                    "type": "string",
+                    "default": "1.0"
+                },
+                {
+                    "name": "server.tomcat.uri-encodeing",
+                    "label": "tomcat编码",
+                    "description": "tomcat编码",
+                    "required": "true",
+                    "type": "string",
+                    "default": "UTF-8"
+                },
+                {
+                    "name": "spring.application.name",
+                    "label": "服务名",
+                    "description": "服务名",
+                    "required": "true",
+                    "type": "string",
+                    "default": "scheduler"
+                },
+                {
+                    "name": "spring.servlet.multipart.max-file-size",
+                    "label": "最大文件大小",
+                    "description": "最大文件大小",
+                    "required": "true",
+                    "type": "string",
+                    "default": "200MB"
+                },
+                {
+                    "name": "spring.servlet.multipart.max-request-size",
+                    "label": "最大请求大小",
+                    "description": "最大请求大小",
+                    "required": "true",
+                    "type": "string",
+                    "default": "200MB"
+                },
+                {
+                    "name": "scheduler.strategy.selectResource",
+                    "label": "资源选择策略",
+                    "description": "资源选择策略",
+                    "required": "true",
+                    "type": "string",
+                    "default": "fair"
+                },
+                {
+                    "name": "rpc.server.port",
+                    "label": "调度器RPC端口号",
+                    "description": "调度器RPC端口号",
+                    "required": "true",
+                    "type": "port",
+                    "default": 3721
+                },
+                {
+                    "name": "spring.kafka.producer.key-serializer",
+                    "label": "spring kafka producer key-serializer",
+                    "description": "kafka producer key-serializer",
+                    "required": "true",
+                    "type": "string",
+                    "default": "org.apache.kafka.common.serialization.StringSerializer"
+                },
+                {
+                    "name": "spring.kafka.producer.value-serializer",
+                    "label": "kafka producer value-serializer",
+                    "description": "kafka producer value-serializer",
+                    "required": "true",
+                    "type": "string",
+                    "default": "org.apache.kafka.common.serialization.StringSerializer"
+                },
+                {
+                    "name": "spring.kafka.producer.retries",
+                    "label": "kafka.producer.retries",
+                    "description": "kafka.producer.retries",
+                    "required": "true",
+                    "type": "long",
+                    "default": "3"
+                }
+            ],
+            "configWriter": {
+                "generators": [
+                    {
+                        "filename": "application.properties",
+                        "configFormat": "properties",
+                        "excludedParams": [
+                            "log_dir",
+                             "pjm.schedule-port"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

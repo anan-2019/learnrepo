@@ -8,12 +8,16 @@
     <artifactId>learnrepo</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.5.RELEASE</version>
+    </parent>
     <modules>
         <module>sparklearn</module>
         <module>scalalearn</module>
         <module>javalearn</module>
         <module>flinklearn</module>
-        <module>baselearn</module>
         <module>javalearn/baselearn</module>
     </modules>
 

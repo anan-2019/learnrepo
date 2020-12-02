@@ -1,0 +1,26 @@
+{
+	"schema_version": 1,
+	"name": "SOURCECODE",
+	"version": "6.0.0.37786",
+	"setActiveSymlink": true,
+	"conflicts": "",
+	"provides": [
+		"sourcecode"
+	],
+	"scripts": {
+		"defines": "env.sh"
+	},
+	"packages": [{
+			"name": "sourcecode",
+			"version": "6.0.0.37786"
+		}
+	],
+	"components": [{
+			"name": "sourcecode",
+			"version": "6.0.0.37786",
+			"pkg_version": "0.1.0"
+		}
+	],
+	"users": {},
+	"groups": []
+}

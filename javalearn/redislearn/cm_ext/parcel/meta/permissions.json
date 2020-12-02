@@ -1,0 +1,7 @@
+{
+  "redislearn/start_cm.sh": {
+    "user":  "root",
+    "group": "root",
+    "permissions": "0755"
+  }
+}

@@ -16,6 +16,8 @@
         <module>dockerbuild</module>
         <module>redislearn</module>
         <module>hdfslearn</module>
+        <module>sourcecode</module>
+        <module>dynamicdatesource</module>
     </modules>
 
     <properties>

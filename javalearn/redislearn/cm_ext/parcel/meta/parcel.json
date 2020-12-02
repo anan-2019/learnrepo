@@ -1,0 +1,26 @@
+{
+	"schema_version": 1,
+	"name": "REDISLEARN",
+	"version": "6.0.0.37786",
+	"setActiveSymlink": true,
+	"conflicts": "",
+	"provides": [
+		"redislearn"
+	],
+	"scripts": {
+		"defines": "env.sh"
+	},
+	"packages": [{
+			"name": "redislearn",
+			"version": "6.0.0.37786"
+		}
+	],
+	"components": [{
+			"name": "redislearn",
+			"version": "6.0.0.37786",
+			"pkg_version": "0.1.0"
+		}
+	],
+	"users": {},
+	"groups": []
+}
