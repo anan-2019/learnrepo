@@ -5,11 +5,14 @@ import org.mybatis.spring.boot.autoconfigure.MybatisProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.framework.AopContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+
+import java.util.List;
 
 /**
  * @ClassName Main
@@ -24,6 +27,8 @@ public class Main implements CommandLineRunner {
     private static Logger logger = LoggerFactory.getLogger(Main.class);
 
 
+    @Autowired
+    DataDao dataDao;
 
     public static void main(String[] args) {
         SpringApplication.run(Main.class);
@@ -31,6 +36,8 @@ public class Main implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("342");
+        List<String> strings = dataDao.selectTest();
+        System.out.println(strings);
     }
+
 }
