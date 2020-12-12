@@ -18,6 +18,7 @@
         <module>hdfslearn</module>
         <module>sourcecode</module>
         <module>dynamicdatesource</module>
+        <module>nettylearn</module>
     </modules>
 
     <properties>
