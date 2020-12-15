@@ -18,8 +18,6 @@
         <module>scalalearn</module>
         <module>javalearn</module>
         <module>flinklearn</module>
-        <module>javalearn/baselearn</module>
-        <module>designpattern</module>
     </modules>
 
 

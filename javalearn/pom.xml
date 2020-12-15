@@ -19,7 +19,8 @@
         <module>sourcecode</module>
         <module>dynamicdatesource</module>
         <module>nettylearn</module>
-        <module>desigpattern</module>
+        <module>designpattern</module>
+        <module>startertest</module>
     </modules>
 
     <properties>

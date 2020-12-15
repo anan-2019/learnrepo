@@ -11,7 +11,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @Description Class Function Description Here
  */
 @Data
-@ConfigurationProperties(prefix = "kafka")
+@ConfigurationProperties(prefix = "demo")
 public class KafkaConfig {
     private String name;
 }
