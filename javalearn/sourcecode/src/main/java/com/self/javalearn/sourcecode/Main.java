@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @ClassName Main
@@ -13,11 +14,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Description Class Function Description Here
  */
 @SpringBootApplication
+@EnableTransactionManagement
 public class Main {
     private static Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
         SpringApplication.run(Main.class);
+
 //        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(Config.class);
 //        Object user = annotationConfigApplicationContext.getBean("User");
 //        String s = user.toString();
