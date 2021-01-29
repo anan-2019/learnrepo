@@ -1,6 +1,7 @@
 
 import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.api.java.tuple.Tuple
+import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.scala._
 import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow
@@ -14,10 +15,13 @@ import java.util.Properties
  * @Date 2020/7/7 17:01
  * @Version 1.0
  * @Description Class Function Description Here
+ * https://blog.csdn.net/qq_29672495/article/details/107939925
  */
 object Main {
     def main(args: Array[String]): Unit = {
         val environment: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
+
+        environment.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
         // 设置读取的kafka参数
         val properties = new Properties()
         properties.setProperty("bootstrap.servers", "kafka02:9092,kafka01:9092")
