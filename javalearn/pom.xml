@@ -21,6 +21,7 @@
         <module>nettylearn</module>
         <module>designpattern</module>
         <module>startertest</module>
+        <module>rabbitmqlearn</module>
     </modules>
 
     <properties>
