@@ -23,6 +23,7 @@
         <module>startertest</module>
         <module>rabbitmqlearn</module>
         <module>websocket</module>
+        <module>rxjava</module>
     </modules>
 
     <properties>
