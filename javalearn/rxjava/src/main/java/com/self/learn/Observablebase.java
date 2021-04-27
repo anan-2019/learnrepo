@@ -29,7 +29,8 @@ public class Observablebase {
         observable = Observable.just("Hello","HI","Aloha1");
 
         String[] string = {"Hello","HI","Aloha2"};
-        observable = Observable.from(string).observeOn(Schedulers.io()).map(x->{
+        observable = Observable.from(string).observeOn(Schedulers.immediate()).map(x->{
+            System.out.println("创建完成");
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
