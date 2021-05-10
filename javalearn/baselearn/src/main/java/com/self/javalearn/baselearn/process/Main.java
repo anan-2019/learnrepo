@@ -19,6 +19,7 @@ public class Main {
         String[] cmd = {"sh", "-c", "jstack 86556  > /Users/anan/Desktop/result.log"};
 //        String[] cmd = {"sh", "-c", "sh /Users/anan/Desktop/run.sh  > /Users/anan/Desktop/result.log"};
         Process p = null;
+
         try {
             p = Runtime.getRuntime().exec(cmd);
 //            p.waitFor(1, TimeUnit.MILLISECONDS);
